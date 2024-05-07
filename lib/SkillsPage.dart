@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class SkillsPage extends StatefulWidget {
+  const SkillsPage({super.key});
+
   @override
   State<SkillsPage> createState() => _SkillsPageState();
 }
@@ -11,7 +13,7 @@ class _SkillsPageState extends State<SkillsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 203, 187, 253),
+      backgroundColor: const Color.fromARGB(255, 203, 187, 253),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -21,7 +23,7 @@ class _SkillsPageState extends State<SkillsPage> {
               lineWidth: 9.0,
               animation: true,
               percent: 0.85,
-              center: Text(
+              center: const Text(
                 ' JS\n85%',
                 style: TextStyle(
                   fontSize: 20.0,
@@ -30,15 +32,15 @@ class _SkillsPageState extends State<SkillsPage> {
                 ),
               ),
               backgroundColor: Colors.black12,
-              progressColor: Color.fromARGB(255, 23, 23, 121),
+              progressColor: const Color.fromARGB(255, 23, 23, 121),
             ),
-            SizedBox(height: 30.0),
+            const SizedBox(height: 30.0),
             CircularPercentIndicator(
               radius: 100.0,
               lineWidth: 9.0,
               animation: true,
               percent: 0.9,
-              center: Text(
+              center: const Text(
                 'CSS\n90%',
                 style: TextStyle(
                   fontSize: 20.0,
@@ -47,15 +49,15 @@ class _SkillsPageState extends State<SkillsPage> {
                 ),
               ),
               backgroundColor: Colors.black12,
-              progressColor: Color.fromARGB(255, 23, 23, 121),
+              progressColor: const Color.fromARGB(255, 23, 23, 121),
             ),
-            SizedBox(height: 50.0),
+            const SizedBox(height: 50.0),
             CircularPercentIndicator(
               radius: 100.0,
               lineWidth: 9.0,
               animation: true,
               percent: 0.95,
-              center: Text(
+              center: const Text(
                 'HTML\n  95%',
                 style: TextStyle(
                   fontSize: 20.0,
@@ -64,13 +66,13 @@ class _SkillsPageState extends State<SkillsPage> {
                 ),
               ),
               backgroundColor: Colors.black12,
-              progressColor: Color.fromARGB(255, 23, 23, 121),
+              progressColor: const Color.fromARGB(255, 23, 23, 121),
             ),
           ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outlined),
             label: 'Profile',
