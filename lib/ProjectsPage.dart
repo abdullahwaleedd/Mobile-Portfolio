@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ProjectsPage extends StatefulWidget {
+  const ProjectsPage({super.key});
+
   @override
   State<ProjectsPage> createState() => _ProjectsPageState();
 }
@@ -10,7 +12,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 203, 187, 253),
+      backgroundColor: const Color.fromARGB(255, 203, 187, 253),
       body: Center(
           child: Column(
         children: [
@@ -22,7 +24,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
             child: Card(
                 elevation: 7,
                 child: Padding(
-                  padding: EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(15),
                   child: Row(
                     children: [
                       Column(
@@ -105,7 +107,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
             child: Card(
                 elevation: 7,
                 child: Padding(
-                  padding: EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(15),
                   child: Row(
                     children: [
                       Column(
