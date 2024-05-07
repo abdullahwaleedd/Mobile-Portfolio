@@ -31,6 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   circle_progress_bar: ^0.1.1
+  url_launcher: ^6.0.12
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

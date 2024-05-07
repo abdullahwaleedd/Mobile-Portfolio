@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/link.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -9,7 +10,12 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   int _selectedIndex = 0;
-
+  ButtonStyle buts = ElevatedButton.styleFrom(
+      fixedSize: const Size(115, 50),
+      elevation: 0,
+      padding: const EdgeInsets.all(0),
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10))));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,199 +52,138 @@ class _ProfilePageState extends State<ProfilePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: 8,
-                  ),
-                  child: SizedBox(
-                    width: 125,
-                    height: 60,
-                    child: Card(
-                      color: Colors.white,
-                      child: Row(
-                        children: [
-                          const SizedBox(
-                            width: 10,
+                Link(
+                  uri: Uri.parse("https://www.github.com"),
+                  builder: (context, followLink) {
+                    return ElevatedButton(
+                      style: buts,
+                      onPressed: followLink,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 0.0),
+                        child: SizedBox(
+                          width: 125,
+                          height: 60,
+                          child: Card(
+                            elevation: 0,
+                            color: Colors.white,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Image.asset(
+                                  'img/gh.png',
+                                  width: 25,
+                                  height: 25,
+                                ),
+                                const SizedBox(
+                                  width: 15,
+                                ),
+                                const Text(
+                                  "Github",
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
                           ),
-                          Image.asset(
-                            'img/gh.png',
-                            width: 25,
-                            height: 25,
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          const Text(
-                            "Github",
-                            style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.bold),
-                          )
-                        ],
+                        ),
                       ),
-                    ),
-                  ),
+                    );
+                  },
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: 8,
-                  ),
-                  child: SizedBox(
-                    width: 125,
-                    height: 60,
-                    child: Card(
-                      color: Colors.white,
-                      child: Row(
-                        children: [
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Image.asset(
-                            'img/lnkd.png',
-                            width: 25,
-                            height: 25,
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          const Text(
-                            "LinkedIn",
-                            style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.bold),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
+                const SizedBox(
+                  width: 10,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: 8,
-                  ),
-                  child: SizedBox(
-                    width: 125,
-                    height: 60,
-                    child: Card(
-                      color: Colors.white,
-                      child: Row(
-                        children: [
-                          const SizedBox(
-                            width: 2,
+                Link(
+                  uri: Uri.parse("https://www.linkedin.com"),
+                  builder: (context, followLink) {
+                    return ElevatedButton(
+                      style: buts,
+                      onPressed: followLink,
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          top: 0,
+                        ),
+                        child: SizedBox(
+                          width: 125,
+                          height: 60,
+                          child: Card(
+                            elevation: 0,
+                            color: Colors.white,
+                            child: Row(
+                              children: [
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Image.asset(
+                                  'img/lnkd.png',
+                                  width: 25,
+                                  height: 25,
+                                ),
+                                const SizedBox(
+                                  width: 5,
+                                ),
+                                const Text(
+                                  "LinkedIn",
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
                           ),
-                          Image.asset(
-                            'img/wat.png',
-                            width: 30,
-                            height: 30,
-                          ),
-                          const SizedBox(
-                            width: 3,
-                          ),
-                          const Text(
-                            "WhatsApp",
-                            style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.bold),
-                          )
-                        ],
+                        ),
                       ),
-                    ),
-                  ),
+                    );
+                  },
                 ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Padding(
-                  padding: EdgeInsets.only(
-                    top: 8,
-                  ),
-                  child: SizedBox(
-                    width: 125,
-                    height: 60,
-                    child: Card(
-                      color: Colors.white,
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Icon(Icons.facebook,
-                              color: Color.fromRGBO(8, 102, 255, 1)),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            "Facebook",
-                            style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.bold),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
+                const SizedBox(
+                  width: 10,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: 8,
-                  ),
-                  child: SizedBox(
-                    width: 125,
-                    height: 60,
-                    child: Card(
-                      color: Colors.white,
-                      child: Row(
-                        children: [
-                          const SizedBox(
-                            width: 8,
+                Link(
+                  uri: Uri.parse("https://www.gmail.com"),
+                  builder: (context, followLink) {
+                    return ElevatedButton(
+                      style: buts,
+                      onPressed: followLink,
+                      child: const Padding(
+                        padding: EdgeInsets.only(
+                          top: 0,
+                        ),
+                        child: SizedBox(
+                          width: 125,
+                          height: 60,
+                          child: Card(
+                            elevation: 0,
+                            color: Colors.white,
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Icon(
+                                  Icons.email_outlined,
+                                  color: Colors.red,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  "Email",
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
                           ),
-                          Image.asset(
-                            'img/ig.png',
-                            width: 25,
-                            height: 25,
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          const Text(
-                            "Instagram",
-                            style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.bold),
-                          )
-                        ],
+                        ),
                       ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: 8,
-                  ),
-                  child: SizedBox(
-                    width: 125,
-                    height: 60,
-                    child: Card(
-                      color: Colors.white,
-                      child: Row(
-                        children: [
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          Image.asset(
-                            'img/x.png',
-                            width: 25,
-                            height: 25,
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          const Text(
-                            "X (Twitter)",
-                            style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.bold),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
+                    );
+                  },
                 ),
               ],
             ),
