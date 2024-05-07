@@ -7,73 +7,63 @@ class SkillsPage extends StatefulWidget {
 }
 
 class _SkillsPageState extends State<SkillsPage> {
-  int _selectedIndex0 = 0;
+  int _selectedIndex0 = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 129, 106, 197),
+      backgroundColor: Color.fromARGB(255, 203, 187, 253),
       body: Center(
         child: Column(
-          mainAxisAlignment:
-              MainAxisAlignment.center, 
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-          
             CircularPercentIndicator(
-              radius: 100.0, 
-              lineWidth: 9.0, 
+              radius: 100.0,
+              lineWidth: 9.0,
               animation: true,
-              percent: 0.85, 
+              percent: 0.85,
               center: Text(
-                'JS\n85%',
+                ' JS\n85%',
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(248, 0, 0, 0), 
+                  color: Color.fromARGB(248, 0, 0, 0),
                 ),
               ),
               backgroundColor: Colors.black12,
-
-              progressColor: Color.fromARGB(
-                  255, 23, 23, 121), 
+              progressColor: Color.fromARGB(255, 23, 23, 121),
             ),
-            SizedBox(height: 30.0), 
-
-            
+            SizedBox(height: 30.0),
             CircularPercentIndicator(
               radius: 100.0,
               lineWidth: 9.0,
               animation: true,
               percent: 0.9,
-
               center: Text(
-                'css\n90%',
+                'CSS\n90%',
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black, 
+                  color: Colors.black,
                 ),
               ),
               backgroundColor: Colors.black12,
-              
               progressColor: Color.fromARGB(255, 23, 23, 121),
             ),
             SizedBox(height: 50.0),
-            
             CircularPercentIndicator(
-              radius: 100.0, 
+              radius: 100.0,
               lineWidth: 9.0,
               animation: true,
               percent: 0.95,
               center: Text(
-                'html\n95%',
+                'HTML\n  95%',
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 4, 4, 4), 
+                  color: Color.fromARGB(255, 4, 4, 4),
                 ),
               ),
               backgroundColor: Colors.black12,
-             
               progressColor: Color.fromARGB(255, 23, 23, 121),
             ),
           ],
@@ -82,11 +72,11 @@ class _SkillsPageState extends State<SkillsPage> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+            icon: Icon(Icons.person_outlined),
             label: 'Profile',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_tree_outlined),
+            icon: Icon(Icons.account_tree),
             label: 'Skills',
           ),
           BottomNavigationBarItem(
@@ -116,7 +106,6 @@ class _SkillsPageState extends State<SkillsPage> {
         Navigator.pushNamed(context, '/Projects');
         break;
       default:
-      
     }
   }
 }

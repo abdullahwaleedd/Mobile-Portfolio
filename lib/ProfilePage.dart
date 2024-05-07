@@ -7,12 +7,12 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   int _selectedIndex = 0;
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 129, 106, 197),
-      body: SizedBox(
+      backgroundColor: const Color.fromARGB(255, 203, 187, 253),
+      body: const SizedBox(
         width: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -70,7 +70,7 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Profile',
@@ -84,18 +84,16 @@ class _ProfilePageState extends State<ProfilePage> {
             label: 'Projects',
           ),
         ],
-      
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
       ),
     );
   }
-void _onItemTapped(int index) {
+
+  void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-    
     });
-
 
     switch (index) {
       case 0:
